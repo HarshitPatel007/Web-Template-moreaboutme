@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav2 {
+            position: fixed;
+            top: 0;
+            z-index: 2000;
+            background-color: white;
+            height: 8%;
+            display: none;
+            width: 100%;
+        }
+
+        #nav1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            background-color: white;
+            height: 8%;
+            display: block;
+            width: 100%;
+        }
+
+        .section {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            background: #3586ff;
+        }
+
+        .section .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url(/img/wave.png);
+            background-size: 1000px 100px;
+
+        }
+
+        .wave1 {
+            animation: animate 10s linear infinite;
+            opacity: 1;
+            z-index: 1000;
+            animation-delay: 0s;
+            bottom: 0;
+        }
+
+        .wave2 {
+            animation: animate2 5s linear infinite;
+            opacity: 0.5;
+            z-index: 999;
+            animation-delay: -5s;
+            bottom: 10px;
+        }
+
+        .wave3 {
+            animation: animate3 10s linear infinite;
+            opacity: 0.2;
+            z-index: 998;
+            animation-delay: -2s;
+            bottom: 15px;
+        }
+
+        .wave4 {
+            animation: animate4 5s linear infinite;
+            opacity: 0.7;
+            z-index: 997;
+            animation-delay: -5s;
+            bottom: 20px;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: 1000px;
+            }
+
+        }
+
+        @keyframes animate2 {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: -1000px;
+            }
+
+        }
+
+        @keyframes animate3 {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: 1000px;
+            }
+
+        }
+
+        @keyframes animate4 {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: 1000px;
+            }
+
+        }
+
+        #list {
+            position: relative;
+            top: -20px;
+            left: 60%;
+            margin-left: 00px;
+            width: 100%;
+            font-weight: bold;
+            font-size: 17px;
+            display: flex;
+            flex-direction: row;
+            font-family: 'Nunito', 'Open Sans', sans-serif;
+
+
+        }
+
+        #logo {
+            position: relative;
+            top: 10px;
+            left: -00px;
+
+
+        }
+
+        ul li a {
+            text-decoration: none;
+            margin: 10px;
+            color: black;
+
+
+        }
+
+        ul li a:hover {
+            color: orangered;
+
+        }
+
+        .nav-link:hover {
+            color: orangered;
+
+        }
+
+        #start {
+            color: white;
+            border: 10px solid orangered;
+            background: orangered;
+            border-radius: 100px 100px 100px 100px;
+        }
+
+        h1 {
+            position: relative;
+            text-align: center;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            margin-top: 10%;
+            background: -webkit-linear-gradient(135deg, #0881ea 0%, #f20837 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            margin-top: 14%;
+            background: -webkit-linear-gradient(135deg, #0881ea 0%, #f20837 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+
+        }
+
+        h4 {
+            text-align: center;
+        }
+
+        .p {
+            position: relative;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 400;
+            color: gray;
+        }
+
+        .p2 {
+            position: relative;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 400;
+            color: gray;
+        }
+
+
+        #form {
+
+            box-shadow: 0px 0px 20px 0px gray;
+            margin-left: 33%;
+            width: 35%;
+            height: 85px;
+            border-radius: 100px 100px 100px 100px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #form span {
+            font-size: 20px;
+            margin-left: -20px;
+            margin-top: 30px;
+        }
+
+        #form input {
+            height: 50px;
+            margin-top: 20px;
+            border: none;
+            font-size: 20px;
+            color: gray;
+
+
+        }
+
+        #form input:focus {
+            outline: none;
+        }
+
+        .btn {
+            width: 20%;
+            height: 55%;
+            font-size: 25px;
+            margin-top: 4%;
+            border-radius: 100px 100px 100px 100px;
+            background-color: orangered;
+            border: none;
+            color: white;
+            font-weight: 500;
+
+        }
+
+        .btn2 {
+            width: 12%;
+            height: 60px;
+            font-size: 25px;
+            margin-top: 4%;
+            margin-left: 45%;
+            border-radius: 100px 100px 100px 100px;
+            background-color: orangered;
+            border: none;
+            color: white;
+            font-weight: 500;
+
+        }
+
+        #about_img {
+            width: 70%;
+            height: 40%;
+            margin-left: 15%;
+        }
+
+        .items {
+            position: relative;
+
+            width: 350px;
+            height: 250px;
+            padding: 20px;
+        }
+
+        @media (max-width:1391px) {
+            #list {
+                margin-left: -100px;
+
+            }
+
+            #form input {
+
+
+                background: none;
+            }
+
+            #form span {
+                margin-left: 20px;
+            }
+
+            .btn {
+                font-size: 20px;
+                margin-left: -40px;
+            }
+
+            .btn2 {
+                font-size: 20px;
+            }
+
+
+        }
+        
+        @media (max-width:1025px) {
+            #list {
+                margin-left: -100px;
+
+            }
+            #form{
+                width: 50%;
+                margin-left: 250px;
+            }
+
+            #form input {
+
+
+                background: none;
+            }
+
+            #form span {
+                margin-left: 20px;
+            }
+
+            .btn {
+                font-size: 20px;
+                margin-left: -40px;
+            }
+
+            
+
+
+        }
+
+        @media (max-width:992px) {
+            #list {
+                margin-left: -200px;
+
+            }
+
+            h1 {
+                margin-top: 15%;
+            }
+
+            #form input {
+                font-size: 18px;
+
+                background: none;
+            }
+
+            #form span {
+                margin-left: 20px;
+                font-size: 18px;
+            }
+            
+
+            .btn {
+                font-size: 18px;
+                margin-left: -100px;
+                margin-top: 20px;
+            }
+
+        }
+        @media (max-width:913px) {
+          
+
+            #form  {
+               width: 45%;
+            }
+            #form span  {
+               margin-left: -20px;
+            }
+
+            .btn {
+                font-size: 18px;
+                margin-left: -50px;
+                margin-top: 20px;
+            }
+
+        }
+        @media (max-width:821px) {
+           #form{
+            width: 50%;
+           }
+            .btn {
+                font-size: 18px;
+                margin-left: -50px;
+                margin-top: 20px;
+            }
+            .btn2 {
+                margin-left: -55px;
+            }
+            #form span  {
+               margin-left: 10px;
+            }
+
+        }
+
+        @media (max-width:768px) {
+            #nav1 {
+                display: none;
+
+            }
+
+            #nav2 {
+                display: block;
+
+            }
+
+            #form {
+                width: 50%;
+
+                margin-left: 180px;
+            }
+
+            #form span {
+                margin-left: -10px;
+                font-size: 18px;
+            }
+
+            .p {
+                font-size: 28px;
+            }
+
+            .p2 {
+                font-size: 25px;
+
+            }
+
+            .btn {
+                width: 20%;
+                height: 55%;
+                margin-left: -55px;
+            }
+
+            .btn2 {
+                width: 15%;
+                height: 50px;
+                margin-left: -55px;
+            }
+        }
+
+        @media (max-width:541px) {
+            #form {
+                width: 70%;
+
+                margin-left: 60px;
+            }
+
+            #form span {
+                margin-left: -10px;
+                font-size: 17px;
+            }
+
+            #form input {
+
+                font-size: 17px;
+            }
+
+            .p {
+                font-size: 23px;
+            }
+
+            .p2 {
+                font-size: 23px;
+
+            }
+
+            .btn {
+                width: 20%;
+                height: 55%;
+                margin-left: -55px;
+            }
+
+            .btn2 {
+                width: 20%;
+                height: 50px;
+                margin-left: 45%;
+
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+            h2 {
+                font-size: 25px;
+            }
+        }
+
+
+
+        @media (max-width:460px) {
+
+            #form {
+                width: 80%;
+
+                margin-left: 50px;
+            }
+
+            #form span {
+                margin-top: 32px;
+                margin-left: -10px;
+                font-size: 17px;
+            }
+
+            #form input {
+
+                font-size: 17px;
+            }
+
+            .p {
+                font-size: 17px;
+            }
+
+            .p2 {
+                font-size: 15px;
+
+            }
+
+            h4 {
+                font-size: 15px;
+            }
+
+            .btn {
+                width: 20%;
+                height: 55%;
+            }
+
+            .btn2 {
+                width: 30%;
+                height: 50px;
+
+            }
+
+            h1 {
+                margin-top: 20%;
+                font-size: 20px;
+            }
+
+            .section {
+                width: 100%;
+            }
+
+        }
+        @media (max-width:460px) {
+
+            #form {
+                width: 90%;
+
+                margin-left: 30px;
+            }
+
+          
+
+        }
+
+        @media (max-width:394px) {
+
+            #form {
+                width: 92%;
+
+                margin-left: 20px;
+            }
+
+            #form span {
+                margin-top: 32px;
+                margin-left: 10px;
+                font-size: 17px;
+            }
+
+            #form input {
+
+                font-size: 17px;
+            }
+
+            .p {
+                font-size: 17px;
+            }
+
+            .p2 {
+                font-size: 15px;
+
+            }
+
+            h4 {
+                font-size: 15px;
+            }
+
+            .btn {
+                width: 20%;
+                height: 55%;
+                
+            }
+
+            .btn2 {
+                width: 30%;
+                height: 50px;
+
+            }
+
+            h1 {
+                margin-top: 20%;
+                font-size: 20px;
+            }
+
+            .section {
+                width: 100%;
+            }
+
+        }
+
+        @media (max-width:376px) {
+
+
+            .btn {
+                margin-left: -50px;
+                width: 20%;
+                margin-top: 15px;
+                font-size: 15px;
+            }
+
+            #form {
+                width: 90%;
+                height: 20%;
+                margin-left: 20px;
+            }
+
+            #form input {
+                font-size: 15px;
+                margin-top: 7px;
+                background: none;
+            }
+
+            #form span {
+                font-size: 15px;
+                margin-top: 20px;
+                margin-left: 5px;
+            }
+
+        }
+        .container{
+         width: 70%;
+         height: 100%;
+        
+         margin-top: 0px;
+          
+         border-top: 10px solid  rgb(245, 241, 241);;
+         border-bottom: 15px solid  rgb(245, 241, 241);;
+         
+         
+         
+        
+         
+        }
+       .bt{
+           box-shadow: 5px 5px 10px gray;
+         
+           
+        }
+      
+        
+        
+        .accordion-item {
+            background-color: transparent;
+         
+        
+            
+        }
+       .accordion-body{
+           background-color: white;
+           border-radius: 0px 0px 30px 30px;
+           box-shadow: 5px 5px 10px gray;
+        
+       
+
+       }
+       #container{
+background-color: rgb(245, 241, 241);
+height: auto;
+       }
+       #Get_started_a{
+        text-decoration: none;
+        color:#fff;
+       }
+       
+    
+    </style>
+</head>
+
+
+<body>
+    <!--navbar-->
+    <div class="container-fluid">
+        <nav class="navbar" id="nav1">
+            <div style="max-width: 1156px; margin: auto;">
+                <div>
+                    <a href="/" title="Ko-fi.com">
+                        <img src="/img/moreaboutme.png" height="38" alt="Ko-fi Logo" id="logo">
+                    </a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav  " id="list">
+                        <li class="navbar_toggel">
+
+                        </li>
+                       
+                        <li>
+                            <a href="/mainpage.html" title="About" class="kfds">Home</a>
+                        </li>
+                        <li>
+                            <a href="/about" title="About" class="kfds">About</a>
+                        </li>
+                        <li class="">
+                            <a href="/gold?ref=home" title="Ko-fi Gold" class="kfds">features</a>
+                        </li>
+
+                        <li>
+                            <a href="/account/login" title="Log In"
+                                class="kfds-c-font-clr-primary-link kfds-font-bold">Log
+                                In</a>
+                        </li>
+                        <li>
+                            <a href="/ragister.html" title="Sign Up" class="kfds" id="start">Ragister</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--navbar2-->
+    <nav class="navbar  fixed-top" id="nav2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <img src="/img/moreaboutme.png" height="38" alt="Ko-fi Logo"
+                    id="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Moreaboutme.in</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/mainpage.html">Home</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ragister.html">Ragister</a>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--heading and paragraph-->
+    <div>
+        <h1>Let The People Know More<br> About You</h1><br>
+        <p class="p">
+            Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Harum ipsa deserunt quam.
+        </p><br>
+        <form action="" id="form" class="col-md-12">
+            <span>Moreaboutme.in/</span>
+            <input type="text" placeholder="Yourname">
+            <button class="btn">Click</button>
+        </form>
+    </div><br>
+    <!--animation-->
+    <section class="section">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+    </section>
+    <!--about section-->
+    <div class="about_section">
+        <h2>Share the Information About YourSelf</h2><br>
+        <p class="p"> Moreaboutme is a open source profile sharing website.<br> It helps you to share informations
+            regarding you. </p>
+        <p class="p">Here you Can make own profile by adding <br> social media links, writing your own bio etc.</p>
+        <img src="/img/Screenshot (3).png" alt="" id="about_img">
+        <button class="btn2"><a href="/ragister.html" id="Get_started_a">Get Started</a></button>
+    </div>
+<!--feature-div-->
+    <div class="features_div">
+        <h2> All the Feartures You Need</h2><br>
+        <p class="p">Moreaboutme Provide Many Features <br>You Need to Make a Profile </p>
+        <div class="d-flex justify-content-center">
+            <div class="items">
+
+                <h4><i class="fa-solid fa-link"></i> Add Links</h4>
+                <p class="p2"> Here You can Add Videos Links Which you Like Most. </p>
+
+            </div>
+            <div class="items">
+                <h4><i class="fa-brands fa-instagram"></i> Add Social Media Profile</h4>
+                <p class="p2"> You Can Add Your Social Media links So Other Persons can Visit There. </p>
+
+            </div>
+            <div class="items">
+                <h4><i class="fa-solid fa-user"></i> Your Bio</h4>
+                <p class="p2">Write About Yourself And Tell People About You. </p>
+
+            </div>
+        </div>
+    </div>
+<!--questions-->
+
+<div class="container-fluid" id="container">
+  <div class=" col-md-12 container  " > 
+    
+        <div class="accordion accordion-flush" id="accordionFlushExample  " >
+            <div class="accordion-item">
+              
+                <button class=" accordion-button collapsed bt" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" >
+                 How To Add links?                                             
+                </button>
+             
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Open your profile and click on add link option to add link .</div>
+              </div>
+            </div>
+            <br>
+            
+            <div class="accordion-item">
+              
+                <button class="accordion-button collapsed bt" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  How To Add Our Instragram Links?
+                </button>
+              
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">To add insragram links click on social media link.</div>
+              </div>
+            </div>
+            <br>
+           
+            
+
+            <div class="accordion-item">
+             
+                <button class="accordion-button collapsed bt" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                 How To Share Our Profile To Other Person?
+                </button>
+            
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">To share your profile copy the link showen on the top of the website and share the link to another person  .</div>
+              </div>
+            </div>
+          </div>
+    
+  </div>
+  </div>
+<br>
+<div class="container-fluid">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
+  
+     
+        <img src="/img/moreaboutme.png" alt=""  class="bi me-2" width="40" height="32">
+      
+  
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="/mainpage.html" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul>
+    </footer>
+  </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/142a17fe25.js" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
