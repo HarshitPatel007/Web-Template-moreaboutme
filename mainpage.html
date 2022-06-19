@@ -704,6 +704,13 @@ height: auto;
        #Get_started_a{
         text-decoration: none;
         color:#fff;
+        
+       }
+       #Get_started_a:focus{
+        text-decoration: none;
+        outline: none;
+        color:#fff;
+
        }
        
     
@@ -711,9 +718,9 @@ height: auto;
 </head>
 
 
-<body>
+<body data-spy="scroll" data-bs-target=".navbar">
     <!--navbar-->
-    <div class="container-fluid">
+    <div class="container-fluid navbar" id="mynav">
         <nav class="navbar" id="nav1">
             <div style="max-width: 1156px; margin: auto;">
                 <div>
@@ -731,14 +738,14 @@ height: auto;
                             <a href="/mainpage.html" title="About" class="kfds">Home</a>
                         </li>
                         <li>
-                            <a href="/about" title="About" class="kfds">About</a>
+                            <a href="#about" title="About" class="kfds">About</a>
                         </li>
                         <li class="">
-                            <a href="/gold?ref=home" title="Ko-fi Gold" class="kfds">features</a>
+                            <a href="#Get_started_a" title="Ko-fi Gold" class="kfds">features</a>
                         </li>
 
                         <li>
-                            <a href="/account/login" title="Log In"
+                            <a href="/login.html" title="Log In"
                                 class="kfds-c-font-clr-primary-link kfds-font-bold">Log
                                 In</a>
                         </li>
@@ -773,14 +780,14 @@ height: auto;
                         </li>
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#features">Features</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Log In</a>
+                            <a class="nav-link" href="/login.html">Log In</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/ragister.html">Ragister</a>
@@ -813,8 +820,9 @@ height: auto;
         <div class="wave wave3"></div>
         <div class="wave wave4"></div>
     </section>
+    <div  id="about"></div>
     <!--about section-->
-    <div class="about_section">
+    <div class="about_section" >
         <h2>Share the Information About YourSelf</h2><br>
         <p class="p"> Moreaboutme is a open source profile sharing website.<br> It helps you to share informations
             regarding you. </p>
@@ -823,7 +831,7 @@ height: auto;
         <button class="btn2"><a href="/ragister.html" id="Get_started_a">Get Started</a></button>
     </div>
 <!--feature-div-->
-    <div class="features_div">
+    <div class="features_div" >
         <h2> All the Feartures You Need</h2><br>
         <p class="p">Moreaboutme Provide Many Features <br>You Need to Make a Profile </p>
         <div class="d-flex justify-content-center">
@@ -892,20 +900,21 @@ height: auto;
   </div>
   </div>
 <br>
+<!--footer-->
 <div class="container-fluid">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
   
      
-        <img src="/img/moreaboutme.png" alt=""  class="bi me-2" width="40" height="32">
+        <img src="/moreaboutme.png" alt=""  class="bi me-2" width="40" height="32">
       
   
       <ul class="nav col-md-4 justify-content-end">
         <li class="nav-item"><a href="/mainpage.html" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        <li class="nav-item"><a href="#features" class="nav-link px-2 text-muted">Features</a></li>
         
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        
+        <li class="nav-item"><a href="#about" class="nav-link px-2 text-muted">About</a></li>
       </ul>
     </footer>
   </div>
