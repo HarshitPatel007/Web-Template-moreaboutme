@@ -13,6 +13,17 @@
             margin: 0;
             padding: 0;
         }
+        #preloader{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            z-index: 99999;
+            background-color: #fff;
+            display: flex;
+             justify-content: center;
+            align-items: center;
+            color: red;
+        }
 
         #nav2 {
             position: fixed;
@@ -718,7 +729,13 @@ height: auto;
 </head>
 
 
-<body data-spy="scroll" data-bs-target=".navbar">
+<body data-spy="scroll" data-bs-target=".navbar" onload="load()">
+    <!--preloader-->
+    <div id="preloader" >
+        <div class="spinner-border " style="width: 10rem; height: 10rem; display: flex; justify-content: center;" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
     <!--navbar-->
     <div class="container-fluid navbar" id="mynav">
         <nav class="navbar" id="nav1">
@@ -926,6 +943,14 @@ height: auto;
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/142a17fe25.js" crossorigin="anonymous"></script>
+
+    <!--preload script-->
+    <script>
+    var preload = document.getElementById("preloader");
+    function load(){
+        preload.style.display = "none"
+    }
+    </script>
 </body>
 
 
