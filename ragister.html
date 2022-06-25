@@ -8,18 +8,86 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <style>
-      #preloader{
-            position: fixed;
+      .preloader_section{
             width: 100%;
-            height: 100vh;
-            z-index: 99999;
-            background-color: #fff;
             display: flex;
-             justify-content: center;
+            position: fixed;
+            justify-content: center;
             align-items: center;
-            color: red;
+            z-index: 99999999;
+            min-height: 100vh;
+            background-color: #fff;
+            animation: animatebg 10s linear infinite;
         }
-   
+        @keyframes animatebg {
+            0%{
+                filter: hue-rotate(0deg);
+                
+            }
+            100%{
+                filter: hue-rotate(360deg);
+
+            }
+            
+        }
+.preloader_section .loder{
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+.preloader_section .loder samp{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+}
+.preloader_section .loder samp::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #00ff0a;
+    box-shadow: 0 0 10px #00ff0a,
+     0 0 20px #00ff0a,
+     0 0 40px #00ff0a,
+     0 0 60px #00ff0a,
+     0 0 80px #00ff0a,
+     0 0 100px #00ff0a;
+     animation: rounding 2s linear infinite;
+     animation-delay: calc(0.1s * var(--i));
+}
+@keyframes rounding {
+    0%{
+       transform: scale(1); 
+    }
+    80%,100%{
+transform: scale(0);
+    }
+}
+.h{
+position: absolute;    
+    font-weight: 500;
+}
+h3{
+    font-size: 20px;
+    
+    color: #00ff0a;
+    box-shadow: 10 10 10px #00ff0a,
+     0 0 20px #00ff0a,
+     0 0 40px #00ff0a,
+     0 0 60px #00ff0a,
+     0 0 80px #00ff0a,
+     0 0 100px #00ff0a;
+    
+    animation-delay: calc(0.1s * var(--i));
+
+}
+
     body{
         background-color: lightgray;
     }
@@ -62,11 +130,34 @@
 </style>
 <body onload="load()">
      <!--preloader-->
-     <div id="preloader" >
-        <div class="spinner-border " style="width: 10rem; height: 10rem; display: flex; justify-content: center;" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-    </div>
+     <section class="preloader_section">
+        <div class="h">
+            <h3>Loading...</h3>
+    
+        </div>
+        <div class="loder">
+            <samp style="--i:1;"></samp>
+            <samp style="--i:2;"></samp>
+            <samp style="--i:3;"></samp>
+            <samp style="--i:4;"></samp>
+            <samp style="--i:5;"></samp>
+            <samp style="--i:6;"></samp>
+            <samp style="--i:7;"></samp>
+            <samp style="--i:8;"></samp>
+            <samp style="--i:9;"></samp>
+            <samp style="--i:10;"></samp>
+            <samp style="--i:11;"></samp>
+            <samp style="--i:12;"></samp>
+            <samp style="--i:13;"></samp>
+            <samp style="--i:14;"></samp>
+            <samp style="--i:15;"></samp>
+            <samp style="--i:16;"></samp>
+            <samp style="--i:17;"></samp>
+            <samp style="--i:18;"></samp>
+            <samp style="--i:19;"></samp>
+            <samp style="--i:20;"></samp>
+        </div>
+    </section>
     <!--image-->
     <img src="/moreaboutme.png" class="rounded " width="50" height="52" alt="...">
  <div class="container ">
@@ -119,7 +210,7 @@
 <script src="https://kit.fontawesome.com/142a17fe25.js" crossorigin="anonymous"></script>
 <!--preload script-->
 <script>
-    var preload = document.getElementById("preloader");
+    var preload = document.querySelector(".preloader_section");
     function load(){
         preload.style.display = "none"
     }
